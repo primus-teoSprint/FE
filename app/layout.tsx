@@ -1,3 +1,6 @@
+import Recoil from './_store/recoil'
+import Providers from './_utils/provider'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,7 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <Providers>
+        <Recoil>{children}</Recoil>
+      </Providers>
     </html>
   )
 }
