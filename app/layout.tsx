@@ -11,11 +11,13 @@ function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <Providers>
-        <Recoil>
-          <Layout>{children}</Layout>
-        </Recoil>
-      </Providers>
+      <body>
+        <Providers>
+          <Recoil>
+            <Layout>{children}</Layout>
+          </Recoil>
+        </Providers>
+      </body>
     </html>
   )
 }

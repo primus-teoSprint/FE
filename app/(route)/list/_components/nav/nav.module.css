@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 25px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}

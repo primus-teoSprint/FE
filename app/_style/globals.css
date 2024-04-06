@@ -8,6 +8,9 @@
 html,
 body {
   color: black;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  background-color: rgb(245,245,245);
 }
 
 button,
@@ -16,3 +19,8 @@ a {
   all: unset;
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
