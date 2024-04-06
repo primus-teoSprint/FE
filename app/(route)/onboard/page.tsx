@@ -1,11 +1,7 @@
-import OnboardPage from "./_components/OnBoardPage";
+import OnboardPage from './_components/OnBoardPage'
 
 function Onboard() {
-
-
-  return (
-    <OnboardPage/>
-  );
+  return <OnboardPage />
 }
 
-export default Onboard;
+export default Onboard

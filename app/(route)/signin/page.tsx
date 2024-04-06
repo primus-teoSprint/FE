@@ -1,8 +1,6 @@
-import Login from "./_components/Login"
+import Login from './_components/Login'
 function Signin() {
-  return (
-    <Login/>
-  )
+  return <Login />
 }
 
 export default Signin
