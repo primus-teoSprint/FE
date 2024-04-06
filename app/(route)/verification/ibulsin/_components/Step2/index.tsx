@@ -33,7 +33,7 @@ function Step2() {
         <div className={S.input_container}>
           <div className={S.input_title_container}>
             <h3 className={S.input_title}>XYZ 가설</h3>
-            <MoreExplainBtn type={''} />
+            <MoreExplainBtn type={'XYZ'} />
           </div>
           <p className={S.input_explain}>
             적어도 X퍼센트의 Y는 Z 할 것이다 라는 형태의 가설이에요. 시장호응
