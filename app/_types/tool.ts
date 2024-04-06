@@ -16,3 +16,7 @@ export interface ToolDetailProps extends ToolCardProps {
   content: string
   verificationMethod: string[]
 }
+
+export interface ToolExample extends ToolCardProps {
+  exampleContent: string
+}
