@@ -1,6 +1,8 @@
+import S from './page.module.css'
+
 function Home() {
   return (
-    <main>
+    <main className={S.wrapper}>
       <div>hello world!!</div>
     </main>
   )

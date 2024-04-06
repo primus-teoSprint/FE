@@ -1,8 +1,8 @@
 import Layout from './_components/layout'
 import Recoil from './_store/recoil'
+import './_style/globals.css'
+import './_style/variables.css'
 import Providers from './_utils/provider'
-import './style/globals.css'
-import './style/variables.css'
 
 function RootLayout({
   children,
