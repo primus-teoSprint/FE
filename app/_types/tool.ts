@@ -1,22 +1,24 @@
-export interface ToolInform {
+interface ToolInform {
   toolImg: string
   title: string
   subTitle?: string
   createdBy?: string
 }
 
-export interface ToolCardProps extends ToolInform {
+interface ToolCardProps extends ToolInform {
   description?: string
   company?: string[]
   keyword?: string[]
   toolId?: number
 }
 
-export interface ToolDetailProps extends ToolCardProps {
+interface ToolDetailProps extends ToolCardProps {
   content: string
   verificationMethod: string[]
 }
 
-export interface ToolExample extends ToolCardProps {
+interface ToolExample extends ToolCardProps {
   exampleContent: string
 }
+
+export type { ToolCardProps, ToolDetailProps, ToolExample, ToolInform }
