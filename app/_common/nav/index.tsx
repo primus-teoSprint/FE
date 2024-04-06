@@ -13,12 +13,12 @@ function Nav() {
 
       <Link href="/mypage">
         <div className={S.userProfileWrapper}>
-          <Image
+          {/* <Image
             src="https://github.com/primus-teoSprint/FE/assets/63100352/b9d091d3-628e-4c16-a609-68b9e0acc3e4"
             alt="사용자 프로필"
             width={25}
             height={25}
-          />
+          /> */}
         </div>
       </Link>
     </div>
