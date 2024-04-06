@@ -1,0 +1,40 @@
+.background {
+  background: #6c76f4;
+  width: 100%;
+  height: 100%;
+}
+
+.wordwrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.word {
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.intosignup {
+  width: 360px;
+  height: 60px;
+  border-radius: 7px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #04030d;
+  text-align: center;
+  font-size: 20px;
+
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
