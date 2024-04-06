@@ -1,0 +1,10 @@
+.question_icon_container {
+  display: flex;
+  position:relative;
+  justify-content: center;
+  align-items: center;
+}
+.question_icon {
+  color:var(--purple-700);
+  cursor: pointer;
+}
