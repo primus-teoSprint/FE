@@ -1,0 +1,6 @@
+.step_pagination_container {
+  display: flex;
+}
+.step_pagination_container > * {
+  margin: 0 12px;
+}
