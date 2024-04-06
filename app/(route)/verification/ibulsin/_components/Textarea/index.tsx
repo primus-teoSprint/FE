@@ -6,7 +6,7 @@ import cn from 'classnames'
 import { useForm } from 'react-hook-form'
 
 interface TextAreaProps {
-  fieldKey: 'outline' | 'why'
+  fieldKey: 'outline' | 'why' | 'marketResponse' | 'XYZ'
 }
 
 function Textarea({ fieldKey }: TextAreaProps) {
@@ -26,6 +26,14 @@ function Textarea({ fieldKey }: TextAreaProps) {
       MaxLength: 500,
     },
     why: {
+      register: whyField,
+      MaxLength: 500,
+    },
+    marketResponse: {
+      register: whyField,
+      MaxLength: 500,
+    },
+    XYZ: {
       register: whyField,
       MaxLength: 500,
     },
