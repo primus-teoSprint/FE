@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { RiKakaoTalkFill } from 'react-icons/ri'
 import rocketLogo from '../../../_assets/_images/rocketLogo.png'
-import styles from '../signin.module.css'
+import styles from '../Signin.module.css'
 
 function Login() {
   const router = useRouter()
