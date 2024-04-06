@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: var(--gray-100);
+  padding: 3px 4px;
+  font-weight: 300;
+  padding: 15px 17px;
+  border-radius: 12px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.keywordWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+
+  border-radius: 10px;
+  background-color: #40607c;
+  color: white;
+  padding: 5px 2px;
+  font-weight: 500;
+}
+
+.marginWrapper {
+  margin-top: 13px;
+}
