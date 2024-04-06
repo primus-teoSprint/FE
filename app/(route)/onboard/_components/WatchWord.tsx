@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import styles from '../Onboard.module.css'
 
-function WatchWord({ handleView }: { handleView: any }) {
+function WatchWord({ handleView }: { handleView: (params: boolean) => void }) {
   const animationRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
