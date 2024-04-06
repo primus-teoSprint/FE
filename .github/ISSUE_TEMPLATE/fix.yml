@@ -1,6 +1,6 @@
 name: '🐥 fix'
 description: '수정사항에 대한 버그 템플릿'
-title: ''
+title: '[fix] '
 labels: 'fix'
 
 body:

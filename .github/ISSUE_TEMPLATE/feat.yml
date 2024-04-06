@@ -1,6 +1,6 @@
 name: '🚀 feat'
 description: '새로운 기능 템플릿'
-title: ''
+title: '[feat] '
 labels: 'feat'
 
 body:
