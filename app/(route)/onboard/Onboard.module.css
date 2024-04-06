@@ -1,0 +1,135 @@
+.background {
+    background: #6C76F4;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.wordwrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.wrap{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.word {
+    color: #FFF;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.smallword{
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.largeword {
+    color: #FFF;
+    text-align: center;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.gray {
+    color: #E8E8E8;
+}
+.blue {
+    color: #183876;
+}
+.topmargin {
+    margin-top: 100px;
+}
+.leftmargin {
+    margin-left: 10px;
+    cursor: pointer;  
+}
+.leftmargin:hover {
+    color: #04030D;
+}
+.flex {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intosignin {
+    width: 360px;
+    height: 60px;
+    border-radius: 7px;
+    background: #FFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #04030D;
+    text-align: center;
+    font-size: 20px;
+
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+}
+
+.intosignin:hover {
+    opacity: 0.8;
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .word {
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+  }
+  
+  .word:nth-child(1) {
+    animation-delay: 0.5s; 
+  }
+  
+  .word:nth-child(2) {
+    animation-delay: 1s; 
+  }
+  
+  .wrap{
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .wrap:nth-child(1) {
+    animation-delay: 0.5s; 
+  }
+  
+  .wrap:nth-child(2) {
+    animation-delay: 1s; 
+  }
+  .wrap:nth-child(3) {
+    animation-delay: 2s; 
+  }
