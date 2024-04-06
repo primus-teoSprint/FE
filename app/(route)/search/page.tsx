@@ -1,6 +1,6 @@
 import SearchBar from '../../_components/search/index'
-import CommonS from '../../page.module.css'
 import Nav from '../list/_components/nav'
+import CommonS from '../main/page.module.css'
 
 //TODO: 검색 결과 카드(toolCard) 가져오기
 function Search() {

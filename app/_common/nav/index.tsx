@@ -7,7 +7,7 @@ import S from './nav.module.css'
 function Nav() {
   return (
     <div className={S.nav}>
-      <Link href="/">
+      <Link href="/main">
         <Image src={logo} alt="로고" width={100} height={100} />
       </Link>
 

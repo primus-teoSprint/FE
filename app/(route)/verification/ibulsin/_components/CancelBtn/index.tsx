@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
-import S from './index.module.css'
-import { MdChevronLeft } from 'react-icons/md'
 import { useRouter } from 'next/navigation'
+import { MdChevronLeft } from 'react-icons/md'
+import S from './index.module.css'
 
 function CancelBtn() {
   const router = useRouter()
@@ -14,7 +13,7 @@ function CancelBtn() {
     )
 
     if (verify) {
-      router.push('/')
+      router.push('/main')
     }
   }
 
