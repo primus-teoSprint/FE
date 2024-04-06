@@ -12,7 +12,7 @@ function Login() {
   const router = useRouter()
 
   const handleClickNonMember = () => {
-    router.push('/')
+    router.push('/main')
   }
   const controls = useAnimation()
 
@@ -35,7 +35,7 @@ function Login() {
   }, [])
 
   const handleClicksignin = () => {
-    router.push('/')
+    router.push('/main')
   }
 
   return (

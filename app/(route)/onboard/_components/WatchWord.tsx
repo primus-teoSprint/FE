@@ -18,7 +18,7 @@ function WatchWord({ handleView }: { handleView: (params: boolean) => void }) {
   return (
     <div className={styles.wordwrap} ref={animationRef}>
       <p className={styles.word}>당신의 아이디어가</p>
-      <p className={styles.word}>로켓처럼 성장하도록</p>
+      <p className={styles.word}>로켓처럼 성장하도록.</p>
     </div>
   )
 }

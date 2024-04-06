@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +10,9 @@
 html,
 body {
   color: black;
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
-  background-color: rgb(245,245,245);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: rgb(245, 245, 245);
 }
 
 button,
@@ -23,4 +25,3 @@ a {
 ::-webkit-scrollbar {
   display: none;
 }
-
