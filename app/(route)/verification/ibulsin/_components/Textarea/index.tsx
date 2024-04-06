@@ -10,16 +10,26 @@ interface TextAreaProps {
 }
 
 function Textarea({ fieldKey }: TextAreaProps) {
+  console.log(fieldKey)
   const { register, watch } = useForm()
 
   const outlineField = register('outline', {
     required: '',
     maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
   })
-  const whyField = register('whyField', {
+  const whyField = register('why', {
     required: '',
     maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
   })
+  const marketResponseField = register('marketResponse', {
+    required: '',
+    maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
+  })
+  const XYZField = register('XYZ', {
+    required: '',
+    maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
+  })
+
   const fields = {
     outline: {
       register: outlineField,
@@ -30,11 +40,11 @@ function Textarea({ fieldKey }: TextAreaProps) {
       MaxLength: 500,
     },
     marketResponse: {
-      register: whyField,
+      register: marketResponseField,
       MaxLength: 500,
     },
     XYZ: {
-      register: whyField,
+      register: XYZField,
       MaxLength: 500,
     },
   }
