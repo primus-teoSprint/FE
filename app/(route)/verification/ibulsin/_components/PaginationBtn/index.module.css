@@ -1,0 +1,14 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background-color: #B9CCFF;
+  color:#939BFF;
+  width:30px;
+  height:30px
+}
+.darken {
+  color: #6C76F4;
+  background-color: #FFFFFF;
+}
