@@ -45,14 +45,14 @@ function Main() {
           >
             {resData?.map((data: Tool, index: number) => {
               return (
-                <SwiperSlide style={{ width: '390px' }}>
+                <SwiperSlide style={{ width: '390px' }} key={index}>
                   <ToolCard
                     title={data?.title || ''}
                     subTitle={data?.subTitle || ''}
                     description={data?.description || ''}
                     toolImg={data?.toolImg || ''}
                     toolId={index}
-                    key={index}
+                    company={data?.company}
                   />
                 </SwiperSlide>
               )
@@ -72,6 +72,7 @@ function Main() {
                 toolImg={data?.toolImg || ''}
                 key={index}
                 toolId={index}
+                keyword={data.keyword}
               />
             )
           })}

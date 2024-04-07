@@ -40,7 +40,15 @@ function KeyWordTool({
         </div>
 
         <div className={S.marginWrapper}>
-          <div className={CommonS.companyWrapper}>{keyword}</div>
+          <div className={CommonS.companyWrapper}>
+            {keyword?.map((value, index) => {
+              return (
+                <div key={index} className={S.keyword}>
+                  {value}
+                </div>
+              )
+            })}
+          </div>
         </div>
       </motion.div>
     </Link>

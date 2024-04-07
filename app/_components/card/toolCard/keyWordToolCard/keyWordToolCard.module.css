@@ -23,7 +23,52 @@
   padding: 5px 2px;
   font-weight: 500;
 }
-
 .marginWrapper {
   margin-top: 13px;
+}
+
+.keyword {
+  width: 100px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.keyword:nth-child(even) {
+  background: #40607c;
+  width: 100px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.keyword:nth-child(odd) {
+  background: #6c76f4;
+  width: 100px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
