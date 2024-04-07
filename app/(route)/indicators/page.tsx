@@ -73,7 +73,10 @@ function Indicators() {
               />
               <ActiveInvestmentList
                 selectedIndex={selectedIndex}
-                onSelect={(index: number) => setSelectedIndex(index)}
+                onSelect={(index: number) => {
+                  setSelectedIndex(index)
+                  setCheckError('')
+                }}
               />
               {checkError && <span className={FormS.error}>{checkError}</span>}
             </div>
