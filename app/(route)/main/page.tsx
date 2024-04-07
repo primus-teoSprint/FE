@@ -10,6 +10,8 @@ import axios, { AxiosResponse } from 'axios'
 import { Data, Tool, Root } from '../../_constants/toolcard'
 import ToolCard from '@/app/_components/card/toolCard'
 import KeyWordTool from '@/app/_components/card/toolCard/keyWordToolCard'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 //TODO: 주석처리 사항들에 데이터 가져오기
 function Main() {
@@ -17,8 +19,6 @@ function Main() {
     queryKey: ['getTools'],
     queryFn: () => axios.get('http://222.121.148.192/api/toolDetails'),
   })
-
-  console.log(data)
 
   if (isFetching) {
     return <div>...loading</div>
@@ -37,18 +37,27 @@ function Main() {
           <Title title="인기 많은 툴" />
         </div>
         <div className={S.toolCardWrapper}>
-          {resData?.map((data: Tool, index: number) => {
-            return (
-              <ToolCard
-                title={data?.title || ''}
-                subTitle={data?.subTitle || ''}
-                description={data?.description || ''}
-                toolImg={data?.toolImg || ''}
-                toolId={index}
-                key={index}
-              />
-            )
-          })}
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={'auto'}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {resData?.map((data: Tool, index: number) => {
+              return (
+                <SwiperSlide style={{ width: '390px' }}>
+                  <ToolCard
+                    title={data?.title || ''}
+                    subTitle={data?.subTitle || ''}
+                    description={data?.description || ''}
+                    toolImg={data?.toolImg || ''}
+                    toolId={index}
+                    key={index}
+                  />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
         </div>
         <div className={S.rowWrapper}>
           <Title title="검증 툴 리스트" />
