@@ -1,7 +1,15 @@
-'use client'
-import Chart from 'react-apexcharts'
+import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+
+const DynamicChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 function Pyramid() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const series = [
     {
       name: '분포도',
@@ -12,7 +20,7 @@ function Pyramid() {
   const options = {
     chart: {
       toolbar: {
-        show: false, // 다운로드 툴바를 숨깁니다.
+        show: false,
       },
     },
     plotOptions: {
@@ -29,7 +37,10 @@ function Pyramid() {
     },
     dataLabels: {
       enabled: true,
-      formatter: function (val: any, opt: any) {
+      formatter: function (
+        val: unknown,
+        opt: { w: { globals: { labels: string[] } }; dataPointIndex: number },
+      ) {
         return opt.w.globals.labels[opt.dataPointIndex]
       },
       dropShadow: {
@@ -47,13 +58,15 @@ function Pyramid() {
 
   return (
     <div>
-      <Chart
-        options={options}
-        series={series}
-        type="bar"
-        width={270}
-        height={220}
-      />
+      {isClient && (
+        <DynamicChart
+          options={options}
+          series={series}
+          type="bar"
+          width={270}
+          height={220}
+        />
+      )}
     </div>
   )
 }
