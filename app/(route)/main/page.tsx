@@ -12,7 +12,9 @@ function Main() {
     <main className={S.wrapper}>
       <Nav />
       <div className={S.inWrapper}>
-        <Search />
+        <Link href="/search">
+          <Search />
+        </Link>
         <div className={S.marginWrapper}>
           <Title title="인기 많은 툴" />
         </div>

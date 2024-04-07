@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { GoArrowLeft } from 'react-icons/go'
 import S from './nav.module.css'
 
-function Nav({ title }: { title: string }) {
+function Nav({ title }: { title?: string }) {
   const router = useRouter()
 
   return (
