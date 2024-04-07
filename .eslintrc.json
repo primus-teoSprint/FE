@@ -51,6 +51,7 @@
       }
     ],
     "no-unused-vars": "warn",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
