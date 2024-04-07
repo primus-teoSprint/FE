@@ -1,0 +1,73 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flex_between_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex_wrapper {
+  display: flex;
+  align-items: center;
+}
+.step_info {
+  color: #FFFFFF;
+  margin: 24px;
+  margin-bottom: 32px;
+}
+.step_info > h3 {
+  padding: 12px 0;
+  font-weight: 500;
+  font-size: 24px;
+}
+.step_info > p {
+  font-size: 24px;
+}
+.survey_container {
+  background-color: #FFFFFF;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 12px;
+}
+.input_container {
+  margin-bottom: 8px;
+}
+.input_title_container {
+  display: flex;
+  align-items: center;
+}
+.input_title {
+  font-size: 16px;
+  padding:12px 0;
+  margin-right: 8px;
+}
+.input_explain {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.direction_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.direction_btns > a {
+  margin: 0 8px;
+}
+.prev_btn {
+  background-color: #FFFFFF;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #DCDCDC;
+  border-radius: 8px;
+}
+.next_btn {
+  background-color: var(--purple-700);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+}
