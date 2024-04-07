@@ -1,0 +1,45 @@
+.wrapper {
+  width: 100%;
+}
+
+.rowWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.columnWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-100);
+  padding: 13px 17px;
+  border-radius: 11px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ideaTitle {
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.03px;
+}
+
+.ideaTool {
+  font-size: 0.7rem;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: white;
+  background-color: var(--purple-700);
+  border-radius: 9px;
+
+  margin-left: 10px;
+}
