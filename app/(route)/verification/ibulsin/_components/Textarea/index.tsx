@@ -6,11 +6,10 @@ import cn from 'classnames'
 import { useForm } from 'react-hook-form'
 
 interface TextAreaProps {
-  fieldKey: 'outline' | 'why' | 'marketResponse' | 'XYZ'
+  fieldKey: 'outline' | 'why' | 'marketResponse' | 'XYZ' | 'xyz' | 'pretotyping'
 }
 
 function Textarea({ fieldKey }: TextAreaProps) {
-  console.log(fieldKey)
   const { register, watch } = useForm()
 
   const outlineField = register('outline', {
@@ -26,6 +25,14 @@ function Textarea({ fieldKey }: TextAreaProps) {
     maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
   })
   const XYZField = register('XYZ', {
+    required: '',
+    maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
+  })
+  const xyzField = register('xyz', {
+    required: '',
+    maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
+  })
+  const pretotypingField = register('pretotyping', {
     required: '',
     maxLength: { value: 500, message: '최대 500자까지 작성가능합니다.' },
   })
@@ -45,6 +52,14 @@ function Textarea({ fieldKey }: TextAreaProps) {
     },
     XYZ: {
       register: XYZField,
+      MaxLength: 500,
+    },
+    xyz: {
+      register: xyzField,
+      MaxLength: 500,
+    },
+    pretotyping: {
+      register: pretotypingField,
       MaxLength: 500,
     },
   }
