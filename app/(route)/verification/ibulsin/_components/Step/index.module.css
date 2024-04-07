@@ -11,6 +11,8 @@
   padding: 12px;
   align-items: center;
   justify-content: space-between;
+
+  font-weight: 700;
 }
 .main_container > .survey_header > .fake {
   width: 24px;

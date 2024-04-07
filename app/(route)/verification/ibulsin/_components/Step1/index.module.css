@@ -3,6 +3,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.step {
+  font-weight: 700;
+}
+
+.step_explain {
+  font-weight: 700;
+  line-height: 38px;
+}
 .step_info {
   color: #ffffff;
   margin: 24px;
@@ -10,29 +18,32 @@
 }
 .step_info > h3 {
   padding: 12px 0;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 1.78rem;
 }
 .step_info > p {
-  font-size: 24px;
+  font-size: 1.78rem;
 }
 .survey_container {
   background-color: #ffffff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding: 12px;
+  padding: 12px 19px;
 }
 .input_container {
-  margin-bottom: 8px;
+  margin-bottom: 13px;
 }
 .input_container > .input_title {
-  font-size: 16px;
-  padding: 12px 0;
+  font-size: 1.19rem;
+  padding-top: 12px;
 }
+
 .input_container > .input_explain {
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 0.75rem;
+  margin-bottom: 11px;
+  color: rgb(28, 28, 28);
 }
+
 .input_container > .input_textarea {
   font-size: 14px;
   width: 100%;

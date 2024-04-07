@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-import style from './index.module.css'
 import Link from 'next/link'
 import Textarea from '../Textarea'
 import { ibulsinVariants } from '@/app/_constants/ibulsin'
@@ -9,6 +7,7 @@ import {
   outlineTextareaAtom,
   whyTextareaAtom,
 } from '@/app/_store/ibulsin/textarea'
+import style from './index.module.css'
 
 function Step1() {
   const { outline, why } = ibulsinVariants
@@ -20,7 +19,7 @@ function Step1() {
         <p className={style.step_explain}>
           생각한 아이디어를
           <br />
-          작성해주세요
+          작성해 주세요.
         </p>
       </div>
       <div className={style.survey_container}>
