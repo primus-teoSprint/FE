@@ -1,7 +1,12 @@
 import Nav from '@/app/_common/nav'
 import Title from '@/app/_common/text/title'
-import { selectedItemAtom, totalinputValueAtom } from '@/app/_store/atom'
-import { useRecoilValue } from 'recoil'
+import {
+  resultAtom,
+  selectedItemAtom,
+  totalinputValueAtom,
+} from '@/app/_store/atom'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import KakaoShareButton from '../button/KakaoShareButton'
 import Pyramid from './Pyramid'
 import S from './result.module.css'
 import ResultItem from './resultItem'
@@ -12,7 +17,9 @@ function Result() {
   const selectedItem = useRecoilValue(selectedItemAtom)
   const totalinputValue = parseInt(useRecoilValue(totalinputValueAtom))
 
-  const result =
+  const [result, setResult] = useRecoilState(resultAtom)
+
+  const resultValue =
     selectedItem?.score &&
     selectedItem?.people &&
     Math.floor(
@@ -21,16 +28,19 @@ function Result() {
         100,
     )
 
+  setResult(resultValue!)
+  console.log(resultValue)
+
   let resultAmount = ''
-  if (result! >= 90) {
+  if (resultValue! >= 90) {
     resultAmount += '매우 높음'
-  } else if (result! >= 70) {
+  } else if (resultValue! >= 70) {
     resultAmount += '높음'
-  } else if (result! >= 50) {
+  } else if (resultValue! >= 50) {
     resultAmount += '보통'
-  } else if (result! >= 30) {
+  } else if (resultValue! >= 30) {
     resultAmount += '낮음'
-  } else if (result! >= 10) {
+  } else if (30 > resultValue! && resultValue! >= 0) {
     resultAmount += '매우 낮음'
   }
 
@@ -85,7 +95,9 @@ function Result() {
         </div>
       </div>
       <div className={S.bottomWrapper}>
-        <button className={S.submitBtnWrapper}>공유하기</button>
+        <div className={S.submitBtnWrapper}>
+          <KakaoShareButton />
+        </div>
       </div>
     </>
   )

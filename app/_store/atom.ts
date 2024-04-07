@@ -9,6 +9,11 @@ export interface ActiveInvestmentItemType {
 
 // type ActiveType = Omit<ActiveInvestmentItemType, 'id'>
 
+export const resultAtom = atom<number>({
+  key: 'resultAtom',
+  default: 0,
+})
+
 export const selectedItemAtom = atom<ActiveInvestmentItemType | null>({
   key: 'selectedItemAtom',
   default: null,
