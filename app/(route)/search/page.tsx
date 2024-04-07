@@ -9,7 +9,10 @@ function Search() {
       <Nav title="검색 결과" />
       <div className={CommonS.wrapper}>
         <SearchBar />
-        <span>데이터를 모두 불러왔습니다.</span>
+
+        <div className={CommonS.columnWrapper}>
+          <span>데이터를 모두 불러왔습니다.</span>
+        </div>
       </div>
     </>
   )

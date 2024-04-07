@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formWrapper {
+  position: relative;
+  margin-top: 46px;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.paddingWrapper {
+  padding: 0 18px;
+}
+
+.overflowWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+  overflow: auto;
+  height: 690px;
+  width: 100%;
+  gap: 14px;
+}
+
+.bottomWrapper {
+  position: absolute;
+  bottom: 0;
+  background-color: #fbfbfb;
+  width: 100%;
+  height: 150px;
+  border-top-left-radius: 38px;
+  border-top-right-radius: 38px;
+}
+
+.submitBtnWrapper {
+  position: absolute;
+  right: 16px;
+  bottom: 50px;
+
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100px;
+  height: auto;
+  padding: 10px 20px;
+  border-radius: 9px;
+  background-color: var(--purple-700);
+}
