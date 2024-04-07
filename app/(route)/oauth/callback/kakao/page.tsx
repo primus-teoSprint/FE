@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Callback from './_components/callback'
 
 function page() {
   return (
-    <div>
-      <Callback />
-    </div>
+    <Suspense fallback={<div>로딩중...</div>}>
+      <div>
+        <Callback />
+      </div>
+    </Suspense>
   )
 }
 
