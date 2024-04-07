@@ -1,17 +1,22 @@
 import axiosInstance from '@/app/_utils/axios'
 import { useMutation } from '@tanstack/react-query'
 
-interface IbulsinFormBodyType {
-  ideaOverView: string
+interface IbulsinFormDataType {
+  ideaOverview: string
   thinkBackground: string
   marketTheory: string
   bigxyzTheory: string
   smallxyzTheory: string
-  pretotypingTheory: string
+  pretotypePlan: string
 }
 
-const postForm = (data: IbulsinFormBodyType) => {
-  const response = axiosInstance.post(`/api/`, data)
+const postForm = (data: IbulsinFormDataType) => {
+  const body = {
+    ...data,
+    toolName: '아이디어 불패신화',
+  }
+  console.log(body)
+  const response = axiosInstance.post(`/api/toolTemplates`, body)
 
   return response
 }
