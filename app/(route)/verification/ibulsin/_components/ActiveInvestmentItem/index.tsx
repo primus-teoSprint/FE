@@ -95,7 +95,15 @@ function ActiveInvestmentItem({
             <span>점</span>
           </div>
         </div>
-        <div className={S.columnWrapper}>
+      </div>
+      <div className={S.btnWrapper}>
+        <input
+          type="checkbox"
+          className={S.checkbox}
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
+        <div className={S.rowWrapper}>
           <button
             type="button"
             className={S.delete_btn}
@@ -106,12 +114,6 @@ function ActiveInvestmentItem({
           <ItemAddBtn />
         </div>
       </div>
-      <input
-        type="checkbox"
-        className={S.checkbox}
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-      />
     </>
   )
 }
