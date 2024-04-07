@@ -30,11 +30,11 @@
 }
 
 .bottomWrapper {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  background-color: #fbfbfb;
-  width: 100%;
-  height: 150px;
+  background-color: #e3e6ff;
+  width: 480px;
+  height: 140px;
   border-top-left-radius: 38px;
   border-top-right-radius: 38px;
 }
@@ -42,7 +42,7 @@
 .submitBtnWrapper {
   position: absolute;
   right: 16px;
-  bottom: 50px;
+  bottom: 45px;
 
   color: white;
   font-weight: 700;
