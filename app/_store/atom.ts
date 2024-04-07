@@ -1,14 +1,17 @@
 import { atom } from 'recoil'
 
 export interface ActiveInvestmentItemType {
-  id: string
+  id?: string
   name: string
   score: number | null
 }
 
 // type ActiveType = Omit<ActiveInvestmentItemType, 'id'>
-// 시온 그는 신이야...
-// 고오급 타입 스크립트,,,
+
+export const selectedItemAtom = atom<ActiveInvestmentItemType | null>({
+  key: 'selectedItemAtom',
+  default: null,
+})
 
 export const totalinputValueAtom = atom({
   key: 'totalinputValueAtom',

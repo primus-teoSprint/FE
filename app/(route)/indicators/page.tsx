@@ -12,7 +12,6 @@ import FormS from './_components/form/form.module.css'
 import S from './indicators.module.css'
 
 //* 투자 지표 입력 페이지입니다.
-//TODO: title에 사용자가 입력했던 요소들이 보여지게 됩니다.
 function Indicators() {
   const router = useRouter()
   const [inputValue, setInputValue] = useRecoilState(totalinputValueAtom)

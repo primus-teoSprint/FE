@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { ActiveInvestmentItemType, investmentItemAtom } from '@/app/_store/atom'
+import {
+  ActiveInvestmentItemType,
+  investmentItemAtom,
+  selectedItemAtom,
+} from '@/app/_store/atom'
 import cn from 'classnames'
 import { ChangeEvent, useState } from 'react'
 import { useRecoilState } from 'recoil'
@@ -22,6 +26,7 @@ function ActiveInvestmentItem({
   onSelect,
 }: ActiveInvestmentItemProps) {
   const [investmentItem, setInvestmentItem] = useRecoilState(investmentItemAtom)
+  const [, setSelectedItem] = useRecoilState(selectedItemAtom)
   const [itemName, setItemName] = useState(item?.name ?? '')
   const [itemScore, setItemScore] = useState<number | undefined>(
     item?.score ?? undefined,
@@ -34,6 +39,11 @@ function ActiveInvestmentItem({
     const selectedInvestmentItem = investmentItem[index]
     setItemName(selectedInvestmentItem.name)
     setItemScore(selectedInvestmentItem?.score ?? undefined)
+
+    setSelectedItem({
+      name: selectedInvestmentItem.name,
+      score: selectedInvestmentItem.score,
+    })
   }
 
   const handleDeleteItem = () => {
