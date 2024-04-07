@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useQuery } from '@tanstack/react-query'
 import axios, { AxiosResponse } from 'axios'
-import { Tool, Root } from '../../../_constants/toolcard'
+import { Root } from '../../../_constants/toolcard'
 import Image from 'next/image'
 
 //TODO: 검증하기 누를 시 해당 아이디어 툴의 id로 이동하기
@@ -73,7 +73,7 @@ function ToolDetail() {
                   return (
                     <li className={S.li} key={index}>
                       <div className={S.circle}></div>
-                      {method}
+                      <div className={S.method}>{method}</div>
                     </li>
                   )
                 })}
@@ -85,21 +85,30 @@ function ToolDetail() {
             <Title title="실제 사례" />
 
             <div className={S.columnWrapper}>
-              <Image
-                src={resData?.toolImg || ''}
-                alt="아이디어 툴 이미지"
-                width={60}
-                height={60}
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-              />
+              {resData?.company.map((company, index) => {
+                return (
+                  <div className={S.examplewrap} key={index}>
+                    <div className={S.img}>
+                      <Image
+                        src={company || ''}
+                        alt="아이디어 툴 이미지"
+                        width={120}
+                        height={40}
+                      />
+                    </div>
+                    <div className={S.examplecontent}>
+                      {resData.exampleContent[index]}
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         )}
       </div>
 
       <Link href={`/verification/ibulsin?step=1`}>
-        <div>검증하기</div>
+        <div className={S.verification}>검증하기</div>
       </Link>
     </div>
   )
