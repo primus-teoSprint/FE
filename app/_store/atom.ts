@@ -4,6 +4,7 @@ export interface ActiveInvestmentItemType {
   id?: string
   name: string
   score: number | null
+  people: number | null
 }
 
 // type ActiveType = Omit<ActiveInvestmentItemType, 'id'>
@@ -25,6 +26,7 @@ export const investmentItemAtom = atom<ActiveInvestmentItemType[]>({
       id: new Date().toISOString(),
       name: '',
       score: null,
+      people: null,
     },
   ],
 })

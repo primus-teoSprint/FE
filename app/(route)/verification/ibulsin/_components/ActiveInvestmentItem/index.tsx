@@ -31,6 +31,9 @@ function ActiveInvestmentItem({
   const [itemScore, setItemScore] = useState<number | undefined>(
     item?.score ?? undefined,
   )
+  const [itemPeople, setItemPeople] = useState<number | undefined>(
+    item?.people ?? undefined,
+  )
 
   const isChecked = selectedIndex === index
 
@@ -43,6 +46,7 @@ function ActiveInvestmentItem({
     setSelectedItem({
       name: selectedInvestmentItem.name,
       score: selectedInvestmentItem.score,
+      people: selectedInvestmentItem.people,
     })
   }
 
@@ -85,6 +89,18 @@ function ActiveInvestmentItem({
     )
   }
 
+  const handleChangePeopleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value)
+    setItemPeople(isNaN(value) ? undefined : value)
+    setInvestmentItem((prev) =>
+      prev.map((investmentItem) =>
+        investmentItem.id === item.id
+          ? { ...item, people: value }
+          : investmentItem,
+      ),
+    )
+  }
+
   return (
     <>
       <div className={S.item_container}>
@@ -103,6 +119,13 @@ function ActiveInvestmentItem({
               onChange={(e) => handleChangeScoreInput(e)}
             />
             <span>점</span>
+            <input
+              className={cn(S.item_score_input, S.input)}
+              type="number"
+              value={itemPeople ?? ''}
+              onChange={(e) => handleChangePeopleInput(e)}
+            />
+            <span>명</span>
           </div>
         </div>
       </div>

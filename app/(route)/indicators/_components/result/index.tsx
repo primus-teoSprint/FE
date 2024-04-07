@@ -10,6 +10,15 @@ function Result() {
   const selectedItem = useRecoilValue(selectedItemAtom)
   const totalinputValue = parseInt(useRecoilValue(totalinputValueAtom))
 
+  const result =
+    selectedItem?.score &&
+    selectedItem?.people &&
+    Math.floor(
+      ((selectedItem.people * selectedItem.score) /
+        (selectedItem.score * totalinputValue)) *
+        100,
+    )
+
   return (
     <div className={S.wrapper}>
       <Nav />
@@ -27,10 +36,8 @@ function Result() {
           <p>전체 이용자 수 : {totalinputValue}</p>
           <p>선택한 아이템 이름: {selectedItem?.name}</p>
           <p>선택한 아이템 점수: {selectedItem?.score}</p>
-          <p>
-            최종 점수:
-            {selectedItem?.score && selectedItem?.score * totalinputValue}
-          </p>
+          <p>선택한 아이템 사람 수: {selectedItem?.people}</p>
+          <p>최종 점수: {result}</p>
         </div>
       </div>
     </div>
