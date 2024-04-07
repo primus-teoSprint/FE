@@ -1,7 +1,7 @@
 import React from 'react'
 import Callback from './_components/callback'
 
-const page = () => {
+function page() {
   return (
     <div>
       <Callback />
