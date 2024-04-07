@@ -7,7 +7,7 @@ function WatchWord({
   twoText = '로켓처럼 성장하도록.',
   onAnimationEnd,
 }: {
-  handleView: (params: boolean) => void
+  handleView: (arg: boolean) => void
   firstText?: string
   twoText?: string
   onAnimationEnd?: () => void
