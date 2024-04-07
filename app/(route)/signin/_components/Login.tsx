@@ -34,8 +34,12 @@ function Login() {
     animateDiagonal()
   }, [])
 
-  const handleClicksignin = () => {
-    router.push('/main')
+  const handleLogin = () => {
+    const KAKAO_CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
+    const KAKAO_REDIRECT_URL = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URL
+    const kakadoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URL}&response_type=code`
+
+    window.location.href = kakadoAuthUrl
   }
 
   return (
@@ -61,10 +65,14 @@ function Login() {
           height={400}
         />
       </motion.div>
-
-      <div className={styles.kakaologin} onClick={handleClicksignin}>
+      {/* <form method="GET" action="/api/signincheck">
+        <button className={styles.kakaologin} type="submit">
+          <RiKakaoTalkFill className={styles.icon} /> 카카오로 시작하기
+        </button>
+      </form> */}
+      <button className={styles.kakaologin} type="button" onClick={handleLogin}>
         <RiKakaoTalkFill className={styles.icon} /> 카카오로 시작하기
-      </div>
+      </button>
       <div className={styles.nonmember} onClick={handleClickNonMember}>
         비회원으로 둘러보기
       </div>
