@@ -28,20 +28,20 @@ function Step3() {
   const { mutate } = useIbulsinFormMutation()
 
   const handleSubmit = () => {
-    const ideaOverView = outlineValue
+    const ideaOverview = outlineValue
     const thinkBackground = whyTextValue
     const marketTheory = marketResponseValue
     const bigxyzTheory = XYZValue
     const smallxyzTheory = xyzValue
-    const pretotypingTheory = pretotypingValue
+    const pretotypePlan = pretotypingValue
 
     const body = {
-      ideaOverView,
+      ideaOverview,
       thinkBackground,
       marketTheory,
       bigxyzTheory,
       smallxyzTheory,
-      pretotypingTheory,
+      pretotypePlan,
     }
 
     mutate(body, {
