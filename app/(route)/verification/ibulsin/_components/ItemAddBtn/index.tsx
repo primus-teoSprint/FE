@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
-import S from './index.module.css'
+import { ActiveInvestmentItemType, investmentItemAtom } from '@/app/_store/atom'
 import { useSetRecoilState } from 'recoil'
-import investmentItemAtom, { ActiveInvestmentItemType } from '@/app/_store/atom'
+import S from './index.module.css'
 
 function ItemAddBtn() {
   const setInvestmentItem = useSetRecoilState(investmentItemAtom)
@@ -12,7 +11,7 @@ function ItemAddBtn() {
     const newItem: ActiveInvestmentItemType = {
       id: new Date().toISOString(),
       name: '',
-      score: 0,
+      score: null,
     }
     setInvestmentItem((prev) => [...prev, newItem])
   }
