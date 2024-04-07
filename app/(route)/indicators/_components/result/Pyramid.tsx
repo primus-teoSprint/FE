@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 
 const DynamicChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -12,7 +12,7 @@ function Pyramid() {
 
   const series = [
     {
-      name: '분포도',
+      name: '최종 점수',
       data: [10, 30, 50, 70, 90],
     },
   ]
@@ -23,6 +23,7 @@ function Pyramid() {
         show: false,
       },
     },
+    colors: ['#afb0fe', '#a576f4', '#c676f4', '#e676f4', '#6c76f4'],
     plotOptions: {
       bar: {
         borderRadius: 0,
@@ -32,6 +33,7 @@ function Pyramid() {
         isFunnel: true,
       },
     },
+
     legend: {
       show: true,
     },
@@ -57,17 +59,17 @@ function Pyramid() {
   }
 
   return (
-    <div>
+    <>
       {isClient && (
         <DynamicChart
           options={options}
           series={series}
           type="bar"
-          width={270}
-          height={220}
+          width={290}
+          height={300}
         />
       )}
-    </div>
+    </>
   )
 }
 
