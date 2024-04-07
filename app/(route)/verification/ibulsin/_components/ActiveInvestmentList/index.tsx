@@ -1,10 +1,9 @@
 'use client'
 
-import React from 'react'
-import S from './index.module.css'
-import ActiveInvestmentItem from '../ActiveInvestmentItem'
-import { useRecoilValue } from 'recoil'
 import investmentItemAtom from '@/app/_store/atom'
+import { useRecoilValue } from 'recoil'
+import ActiveInvestmentItem from '../ActiveInvestmentItem'
+import S from './index.module.css'
 
 function ActiveInvestmentList() {
   const investmentItem = useRecoilValue(investmentItemAtom)

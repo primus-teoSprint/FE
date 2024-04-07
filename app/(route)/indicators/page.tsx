@@ -4,6 +4,7 @@ import Title from '@/app/_common/text/title'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import Nav from '../list/_components/nav'
+import ActiveInvestmentList from '../verification/ibulsin/_components/ActiveInvestmentList'
 import FormTitle from './_components/form/FormTitle'
 import FormS from './_components/form/form.module.css'
 import S from './indicators.module.css'
@@ -11,7 +12,6 @@ import S from './indicators.module.css'
 //* 투자 지표 입력 페이지입니다.
 //TODO: title에 사용자가 입력했던 요소들이 보여지게 됩니다.
 //TODO: recoil 사용
-//? 피기님이 하신 투자지표 툴로 변경 예정
 function Indicators() {
   const router = useRouter()
   const [inputValue, setInputValue] = useState('')
@@ -38,7 +38,8 @@ function Indicators() {
         <div className={S.paddingWrapper}>
           <Title title="아이디어 제목" />
         </div>
-        <form className={S.formWrapper} onSubmit={handleSubmit}>
+
+        <div className={S.formWrapper}>
           <div className={S.overflowWrapper}>
             <FormTitle
               title="전체 이용자 수"
@@ -57,14 +58,20 @@ function Indicators() {
             {error && (
               <span className={FormS.error}>숫자만 입력 가능합니다.</span>
             )}
+
+            <ActiveInvestmentList />
           </div>
 
           <div className={S.bottomWrapper}>
-            <button type="submit" className={S.submitBtnWrapper}>
+            <button
+              type="submit"
+              className={S.submitBtnWrapper}
+              onClick={() => handleSubmit}
+            >
               제출하기
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </>
   )

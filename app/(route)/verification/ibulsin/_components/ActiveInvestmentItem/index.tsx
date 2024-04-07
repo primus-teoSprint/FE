@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import React, { useState } from 'react'
-import S from './index.module.css'
-import cn from 'classnames'
-import { useRecoilState } from 'recoil'
 import investmentItemAtom, { ActiveInvestmentItemType } from '@/app/_store/atom'
+import cn from 'classnames'
+import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import ItemAddBtn from '../ItemAddBtn'
+import S from './index.module.css'
 
 interface ActiveInvestmentItemProps {
   item: ActiveInvestmentItemType
@@ -61,7 +62,7 @@ function ActiveInvestmentItem({ item }: ActiveInvestmentItemProps) {
       <div className={S.item_input_wrapper}>
         <input
           className={cn(S.item_name_input, S.input)}
-          placeholder="아이템1"
+          placeholder="아이템 이름을 입력해 주세요."
           value={itemName}
           onChange={(e) => handleChangeNameInput(e)}
         />
@@ -76,9 +77,16 @@ function ActiveInvestmentItem({ item }: ActiveInvestmentItemProps) {
           <span>점</span>
         </div>
       </div>
-      <button className={S.delete_btn} onClick={handleDeleteItem}>
-        삭제
-      </button>
+      <div className={S.columnWrapper}>
+        <button
+          type="button"
+          className={S.delete_btn}
+          onClick={handleDeleteItem}
+        >
+          삭제
+        </button>
+        <ItemAddBtn />
+      </div>
     </div>
   )
 }

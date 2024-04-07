@@ -4,8 +4,9 @@ import Nav from '@/app/_common/nav'
 import Title from '@/app/_common/text/title'
 import { useState } from 'react'
 import S from './toolDetail.module.css'
+import Link from 'next/link'
 
-//
+//TODO: 검증하기 누를 시 해당 아이디어 툴의 id로 이동하기
 //TODO: 주석 처리 실제 데이터로 변경하기
 function ToolDetail() {
   const [clickBtn, setClickBtn] = useState(false)
@@ -77,9 +78,9 @@ function ToolDetail() {
         )}
       </div>
 
-      {/* <Link href={`/verification/${toolId}`}>
-          <div>검증하기</div>
-        </Link> */}
+      <Link href={`/verification/ibulsin?step=1`}>
+        <div>검증하기</div>
+      </Link>
     </div>
   )
 }

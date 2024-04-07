@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
-import S from './index.module.css'
 import cn from 'classnames'
 import { useForm } from 'react-hook-form'
+import S from './index.module.css'
 
 interface TextAreaProps {
   fieldKey: 'outline' | 'why' | 'marketResponse' | 'XYZ' | 'xyz' | 'pretotyping'

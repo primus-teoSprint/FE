@@ -13,23 +13,32 @@
   align-items: center;
 }
 .step_info {
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 24px;
   margin-bottom: 32px;
 }
 .step_info > h3 {
   padding: 12px 0;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 1.78rem;
 }
 .step_info > p {
-  font-size: 24px;
+  font-size: 1.78rem;
 }
+.step {
+  font-weight: 700;
+}
+
+.step_explain {
+  font-weight: 700;
+  line-height: 38px;
+}
+
 .survey_container {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding: 12px;
+  padding: 12px 19px;
 }
 .input_container {
   margin-bottom: 8px;
@@ -37,15 +46,16 @@
 .input_title_container {
   display: flex;
   align-items: center;
+  padding-top: 12px;
 }
 .input_title {
-  font-size: 16px;
-  padding:12px 0;
+  font-size: 1.19rem;
   margin-right: 8px;
 }
 .input_explain {
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 0.75rem;
+  margin-bottom: 11px;
+  color: rgb(28, 28, 28);
 }
 .direction_btns {
   display: flex;
@@ -56,16 +66,16 @@
   margin: 0 8px;
 }
 .prev_btn {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 12px 20px;
   font-size: 14px;
   font-weight: bold;
-  border: 1px solid #DCDCDC;
+  border: 1px solid #dcdcdc;
   border-radius: 8px;
 }
 .next_btn {
   background-color: var(--purple-700);
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 12px 20px;
   font-size: 14px;
   font-weight: bold;

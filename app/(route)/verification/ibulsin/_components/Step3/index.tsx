@@ -1,14 +1,15 @@
 'use client'
 
-import React from 'react'
-import S from './index.module.css'
-import Link from 'next/link'
-import Textarea from '../Textarea'
-import MoreExplainBtn from '../MoreExplainBtn'
 import { ibulsinVariants } from '@/app/_constants/ibulsin'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import MoreExplainBtn from '../MoreExplainBtn'
+import Textarea from '../Textarea'
+import S from './index.module.css'
 
 function Step3() {
   const { xyz, pretotyping } = ibulsinVariants
+  const router = useRouter()
 
   return (
     <div className={S.main_container}>
@@ -51,8 +52,12 @@ function Step3() {
           <Link className={S.prev_btn} href={'/verification/ibulsin?step=2'}>
             이전 단계
           </Link>
-          <button className={S.next_btn} type="button">
-            제출 하기
+          <button
+            className={S.next_btn}
+            type="button"
+            onClick={() => router.push('/mypage')}
+          >
+            제출하기
           </button>
         </div>
       </div>
