@@ -30,6 +30,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 15px;
+  display: flex;
 }
 
 .title {
