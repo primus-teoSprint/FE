@@ -12,6 +12,7 @@ function ItemAddBtn() {
       id: new Date().toISOString(),
       name: '',
       score: null,
+      people: null,
     }
     setInvestmentItem((prev) => [...prev, newItem])
   }

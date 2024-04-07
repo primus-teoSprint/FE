@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { ActiveInvestmentItemType, investmentItemAtom } from '@/app/_store/atom'
+import {
+  ActiveInvestmentItemType,
+  investmentItemAtom,
+  selectedItemAtom,
+} from '@/app/_store/atom'
 import cn from 'classnames'
 import { ChangeEvent, useState } from 'react'
 import { useRecoilState } from 'recoil'
@@ -22,9 +26,13 @@ function ActiveInvestmentItem({
   onSelect,
 }: ActiveInvestmentItemProps) {
   const [investmentItem, setInvestmentItem] = useRecoilState(investmentItemAtom)
+  const [, setSelectedItem] = useRecoilState(selectedItemAtom)
   const [itemName, setItemName] = useState(item?.name ?? '')
   const [itemScore, setItemScore] = useState<number | undefined>(
     item?.score ?? undefined,
+  )
+  const [itemPeople, setItemPeople] = useState<number | undefined>(
+    item?.people ?? undefined,
   )
 
   const isChecked = selectedIndex === index
@@ -34,6 +42,12 @@ function ActiveInvestmentItem({
     const selectedInvestmentItem = investmentItem[index]
     setItemName(selectedInvestmentItem.name)
     setItemScore(selectedInvestmentItem?.score ?? undefined)
+
+    setSelectedItem({
+      name: selectedInvestmentItem.name,
+      score: selectedInvestmentItem.score,
+      people: selectedInvestmentItem.people,
+    })
   }
 
   const handleDeleteItem = () => {
@@ -75,6 +89,18 @@ function ActiveInvestmentItem({
     )
   }
 
+  const handleChangePeopleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value)
+    setItemPeople(isNaN(value) ? undefined : value)
+    setInvestmentItem((prev) =>
+      prev.map((investmentItem) =>
+        investmentItem.id === item.id
+          ? { ...item, people: value }
+          : investmentItem,
+      ),
+    )
+  }
+
   return (
     <>
       <div className={S.item_container}>
@@ -93,9 +119,24 @@ function ActiveInvestmentItem({
               onChange={(e) => handleChangeScoreInput(e)}
             />
             <span>점</span>
+            <input
+              className={cn(S.item_score_input, S.input)}
+              type="number"
+              value={itemPeople ?? ''}
+              onChange={(e) => handleChangePeopleInput(e)}
+            />
+            <span>명</span>
           </div>
         </div>
-        <div className={S.columnWrapper}>
+      </div>
+      <div className={S.btnWrapper}>
+        <input
+          type="checkbox"
+          className={S.checkbox}
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
+        <div className={S.rowWrapper}>
           <button
             type="button"
             className={S.delete_btn}
@@ -106,12 +147,6 @@ function ActiveInvestmentItem({
           <ItemAddBtn />
         </div>
       </div>
-      <input
-        type="checkbox"
-        className={S.checkbox}
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-      />
     </>
   )
 }
