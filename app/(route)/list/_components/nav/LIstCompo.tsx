@@ -7,7 +7,7 @@ import { Root, Tool } from '@/app/_constants/toolcard'
 import ToolCard from '@/app/_components/card/toolCard'
 
 function ListCompo() {
-  const { data, isFetching } = useQuery<AxiosResponse<Root>>({
+  const { data } = useQuery<AxiosResponse<Root>>({
     queryKey: ['getToolList'],
     queryFn: () => axios.get('http://222.121.148.192/api/toolDetails'),
   })
@@ -26,6 +26,7 @@ function ListCompo() {
               toolImg={data?.toolImg || ''}
               toolId={index}
               company={data?.company}
+              key={index}
             />
           )
         })}
