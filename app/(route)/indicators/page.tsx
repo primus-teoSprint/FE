@@ -1,15 +1,16 @@
 'use client'
 
 import Title from '@/app/_common/text/title'
-import { totalinputValueAtom } from '@/app/_store/atom'
+import { selectedItemAtom, totalinputValueAtom } from '@/app/_store/atom'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import Nav from '../list/_components/nav'
 import ActiveInvestmentList from '../verification/ibulsin/_components/ActiveInvestmentList'
 import FormTitle from './_components/form/FormTitle'
 import FormS from './_components/form/form.module.css'
 import S from './indicators.module.css'
+import useInvestIndicatorMutation from '@/app/_service/mutations/useInvestIndicator'
 
 //* 투자 지표 입력 페이지입니다.
 function Indicators() {
@@ -18,6 +19,9 @@ function Indicators() {
   const [error, setError] = useState('')
   const [checkError, setCheckError] = useState('')
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const selectedItem = useRecoilValue(selectedItemAtom)
+  const totalinputValue = parseInt(useRecoilValue(totalinputValueAtom))
+  const { mutate } = useInvestIndicatorMutation()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
@@ -35,7 +39,33 @@ function Indicators() {
     } else {
       setError('')
       setCheckError('')
-      router.push('/result')
+
+      if (selectedItem) {
+        const { name, score, people } = selectedItem
+
+        const bodyData = {
+          totalInput: totalinputValue,
+          id: '아이디어불패신화',
+          theorySet: {
+            name,
+            score,
+            people,
+          },
+          result: 0,
+        }
+        mutate(
+          { ...bodyData },
+          {
+            onSuccess: () => {
+              router.push('/result')
+            },
+            onError: (error) => {
+              console.log(error)
+              alert('예기치 못한 오류가 발생하였습니다.')
+            },
+          },
+        )
+      }
     }
   }
 
@@ -46,7 +76,6 @@ function Indicators() {
         <div className={S.paddingWrapper}>
           <Title title="아이디어 제목" />
         </div>
-
         <div className={S.formWrapper}>
           <div className={S.overflowWrapper}>
             <div className={S.marginWrapper}>
@@ -54,7 +83,6 @@ function Indicators() {
                 title="전체 이용자 수"
                 subTitle="전체 이용자 수를 가지고 총 결과 지표가 계산됩니다."
               />
-
               <div className={FormS.inputWrapper}>
                 <input
                   className={FormS.input}
