@@ -27,7 +27,10 @@ function RootLayout({
       <body>
         <Providers>
           <Recoil>
-            <Layout>{children}</Layout>
+            <Layout>
+              {children}
+              <div id="modal-root"></div>
+            </Layout>
           </Recoil>
         </Providers>
       </body>

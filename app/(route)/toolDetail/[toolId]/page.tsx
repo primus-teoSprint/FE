@@ -1,10 +1,10 @@
 'use client'
 
+import Modal from '@/app/_common/modal'
 import Nav from '@/app/_common/nav'
 import Title from '@/app/_common/text/title'
 import { useState } from 'react'
 import S from './toolDetail.module.css'
-import Link from 'next/link'
 
 //TODO: 검증하기 누를 시 해당 아이디어 툴의 id로 이동하기
 //TODO: 주석 처리 실제 데이터로 변경하기
@@ -78,9 +78,13 @@ function ToolDetail() {
         )}
       </div>
 
-      <Link href={`/verification/ibulsin?step=1`}>
-        <div>검증하기</div>
-      </Link>
+      <Modal
+        open="검증하기"
+        title="아이디어 불패의 법칙"
+        subTitle="선택한 해당 아이디어 툴로 검사를 진행하시겠습니까? :)"
+        buttonTitle="해당 툴로 검증하기"
+        buttonLink="/verification/ibulsin?step=1"
+      ></Modal>
     </div>
   )
 }
