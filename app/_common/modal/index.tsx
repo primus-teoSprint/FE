@@ -1,16 +1,25 @@
+import Link from 'next/link'
 import { ReactNode, useState } from 'react'
 import ModalPotal from './ModalPortal'
 import S from './modal.module.css'
 
 interface ModalProps {
   open?: string
-  children: ReactNode
+  children?: ReactNode
   title?: string
   subTitle?: string
   buttonTitle?: string
+  buttonLink?: string
 }
 
-function Modal({ open, children, title, subTitle, buttonTitle }: ModalProps) {
+function Modal({
+  open,
+  children,
+  title,
+  subTitle,
+  buttonTitle,
+  buttonLink,
+}: ModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const openModal = () => {
@@ -34,7 +43,13 @@ function Modal({ open, children, title, subTitle, buttonTitle }: ModalProps) {
               <p className={S.subTitle}>{subTitle}</p>
             </div>
             {children}
-            <button className={S.buttonWrapper}>{buttonTitle}</button>
+            <button className={S.buttonWrapper}>
+              {buttonLink ? (
+                <Link href={buttonLink}>{buttonTitle}</Link>
+              ) : (
+                <>{buttonTitle}</>
+              )}
+            </button>
             <div className={S.closeBtnWrapper}>
               <button onClick={closeModal} className={S.closeWrapper}>
                 X
