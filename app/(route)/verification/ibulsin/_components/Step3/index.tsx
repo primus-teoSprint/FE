@@ -1,18 +1,17 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
-import MoreExplainBtn from '../MoreExplainBtn'
 import { ibulsinVariants } from '@/app/_constants/ibulsin'
+import useIbulsinData from '@/app/_hooks/useIbulsinData'
+import useIbulsinFormMutation from '@/app/_service/mutations/useIbulsinForm'
 import {
   pretotypingTextareaAtom,
   xyzTextareaAtom,
 } from '@/app/_store/ibulsin/textarea'
-import useIbulsinData from '@/app/_hooks/useIbulsinData'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import MoreExplainBtn from '../MoreExplainBtn'
 import Textarea from '../Textarea'
 import S from './index.module.css'
-import useIbulsinFormMutation from '@/app/_service/mutations/useIbulsinForm'
-import { useRouter } from 'next/navigation'
 
 function Step3() {
   const router = useRouter()
@@ -46,10 +45,10 @@ function Step3() {
 
     mutate(body, {
       onSuccess: () => {
-        router.push('/')
+        router.push('/indicators')
       },
       onError: () => {
-        alert('에러가 발생하였습니다.')
+        router.push('/signin')
       },
     })
   }
