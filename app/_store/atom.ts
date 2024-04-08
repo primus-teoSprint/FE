@@ -3,8 +3,8 @@ import { atom } from 'recoil'
 export interface ActiveInvestmentItemType {
   id?: string
   name: string
-  score: number | null
-  people: number | null
+  score: number
+  people: number
 }
 
 // type ActiveType = Omit<ActiveInvestmentItemType, 'id'>
@@ -30,8 +30,8 @@ export const investmentItemAtom = atom<ActiveInvestmentItemType[]>({
     {
       id: new Date().toISOString(),
       name: '',
-      score: null,
-      people: null,
+      score: 0,
+      people: 0,
     },
   ],
 })
