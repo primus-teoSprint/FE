@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 //TODO: 사용자 프로필 이미지 가져오기
 function Nav() {
   const router = useRouter()
-  const accessToken = localStorage?.getItem('accessToken')
+  const accessToken = typeof window && localStorage?.getItem('accessToken')
 
   const handleLogout = () => {
     localStorage.removeItem('accessToken')
