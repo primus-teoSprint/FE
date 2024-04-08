@@ -29,7 +29,6 @@ function Result() {
     )
 
   setResult(resultValue!)
-  console.log(resultValue)
 
   let resultAmount = ''
   if (resultValue! >= 90) {
@@ -63,7 +62,7 @@ function Result() {
             </span>
           </div>
 
-          <div className={S.myscore}>100점 달성</div>
+          <div className={S.myscore}>{`${resultValue}점`}</div>
         </div>
         <div className={S.contentwrap}>
           <span className={S.title}>검증 지표</span>
