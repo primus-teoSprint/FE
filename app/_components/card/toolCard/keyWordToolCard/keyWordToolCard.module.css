@@ -15,15 +15,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-
+  width: 100%;
+  overflow: auto;
   border-radius: 10px;
   background-color: #40607c;
   color: white;
-  padding: 5px 2px;
   font-weight: 500;
 }
-
 .marginWrapper {
   margin-top: 13px;
+}
+
+.keyword {
+  width: 120px;
+  height: 30px;
+
+  border-radius: 9px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.keyword:nth-child(even) {
+  background-color: #40607c;
+}
+
+.keyword:nth-child(odd) {
+  background-color: #6c76f4;
 }

@@ -30,6 +30,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 15px;
+  display: flex;
 }
 
 .title {
@@ -59,7 +60,7 @@
 
 .companyWrapper {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   gap: 4px;
   width: 100%;
   overflow: auto;

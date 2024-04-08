@@ -36,7 +36,7 @@ function Login() {
 
   useEffect(() => {
     animateDiagonal()
-  }, [])
+  }, [controls])
 
   const handleLogin = () => {
     const KAKAO_CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID

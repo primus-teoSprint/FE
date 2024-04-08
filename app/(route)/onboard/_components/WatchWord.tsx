@@ -24,17 +24,15 @@ function WatchWord({
     return () => {
       animationRef.current?.removeEventListener('animationend', animationend)
     }
-  }, [])
+  }, [handleView]) // handleView를 의존성 배열에 추가
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      {
-        onAnimationEnd && onAnimationEnd()
-      }
+      onAnimationEnd && onAnimationEnd()
     }, 2000)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [onAnimationEnd]) // onAnimationEnd를 의존성 배열에 추가
 
   const handleAnimationEnd = () => {
     onAnimationEnd && onAnimationEnd()
