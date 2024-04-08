@@ -1,5 +1,6 @@
 'use client'
 
+import Modal from '@/app/_common/modal'
 import Nav from '@/app/_common/nav'
 import Title from '@/app/_common/text/title'
 import { useState } from 'react'
@@ -106,10 +107,13 @@ function ToolDetail() {
           </div>
         )}
       </div>
-
-      <Link href={`/verification/ibulsin?step=1`}>
-        <div className={S.verification}>검증하기</div>
-      </Link>
+      <Modal
+        open="검증하기"
+        title="아이디어 불패의 법칙"
+        subTitle="선택한 해당 아이디어 툴로 검사를 진행하시겠습니까? :)"
+        buttonTitle="해당 툴로 검증하기"
+        buttonLink="/verification/ibulsin?step=1"
+      ></Modal>
     </div>
   )
 }

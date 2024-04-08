@@ -1,9 +1,10 @@
+import Loading from '@/app/_common/loading'
 import { Suspense } from 'react'
 import Step from './_components/Step'
 
 function page() {
   return (
-    <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Step />
     </Suspense>
   )

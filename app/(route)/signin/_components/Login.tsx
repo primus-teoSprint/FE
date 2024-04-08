@@ -4,6 +4,7 @@ import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
+
 import { RiKakaoTalkFill } from 'react-icons/ri'
 import rocketLogo from '../../../_assets/_images/rocketLogo.png'
 import styles from '../Signin.module.css'
@@ -14,20 +15,23 @@ function Login() {
   const handleClickNonMember = () => {
     router.push('/main')
   }
+
   const controls = useAnimation()
 
   const animateDiagonal = async () => {
-    await controls.start({
+    const animationStart = controls.start({
       x: '25px',
       y: '-28px',
       transition: { duration: 5 },
     })
-    await controls.start({
+    const animationEnd = controls.start({
       x: '-20px',
       y: '-10px',
       transition: { duration: 5 },
     })
-    animateDiagonal()
+
+    await animationStart
+    await animationEnd
   }
 
   useEffect(() => {
