@@ -29,7 +29,6 @@ function Result() {
     )
 
   setResult(resultValue!)
-  console.log(resultValue)
 
   let resultAmount = ''
   if (resultValue! >= 90) {

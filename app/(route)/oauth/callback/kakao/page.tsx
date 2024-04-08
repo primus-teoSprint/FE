@@ -1,12 +1,11 @@
-import React, { Suspense } from 'react'
+import Loading from '@/app/_common/loading'
+import { Suspense } from 'react'
 import Callback from './_components/callback'
 
 function page() {
   return (
-    <Suspense fallback={<div>로딩중...</div>}>
-      <div>
-        <Callback />
-      </div>
+    <Suspense fallback={<Loading />}>
+      <Callback />
     </Suspense>
   )
 }
