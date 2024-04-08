@@ -1,4 +1,4 @@
-interface ibulsinVariantsType {
+export interface ibulsinVariantsType {
   outline: 'outline'
   why: 'why'
   marketResponse: 'marketResponse'

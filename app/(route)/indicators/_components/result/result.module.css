@@ -20,12 +20,11 @@
   height: 40px;
 
   border-radius: 14px;
-  border: 2px solid #6c76f4;
+  border: 2px solid var(--purple-700);
   background: #fff;
 
-  color: #6c76f4;
+  color: var(--purple-700);
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
   line-height: 170%;
   text-align: center;
@@ -34,26 +33,101 @@
 .totaluser {
   color: #424242;
   font-size: 13px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
 }
 
 .showscore {
-  color: #424242;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  color: #424242;
   font-size: 11px;
-  font-style: normal;
   font-weight: 300;
   line-height: normal;
+
 }
 
 .title {
   font-size: 1.2rem;
   font-weight: 700;
+  margin-top: 25px;
 }
 
 .subTitle {
   font-size: 0.9rem;
   font-weight: 400;
+}
+
+.itemWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.itemTitle {
+  font-size: 1.1rem;
+  letter-spacing: 0.1px;
+  font-weight: 700;
+}
+
+.itemValue {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.resultItemWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.totalResultWrapper {
+  background-color: #f8f8f8;
+  border-radius: 14px;
+  width: 100%;
+  height: 100px;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+.calculation {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+.resultTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.bottomWrapper {
+  position: relative;
+  background-color: #e7e9ff;
+  width: 480px;
+  height: 150px;
+  border-top-left-radius: 38px;
+  border-top-right-radius: 38px;
+}
+
+.submitBtnWrapper {
+  position: absolute;
+  right: 16px;
+  bottom: 50px;
+
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 160px;
+  height: auto;
+  padding: 10px 20px;
+  border-radius: 9px;
+  background-color: var(--purple-700);
 }

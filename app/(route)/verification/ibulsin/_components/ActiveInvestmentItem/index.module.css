@@ -20,17 +20,20 @@
 
 .item_name_input {
   width: 200px;
-  margin-right: 16px;
+  margin-right: 12px;
 }
 .score_container {
-  margin-right: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .score_container > span {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
+  margin-right: 4px;
 }
 .item_score_input {
-  width: 40px;
+  width: 35px;
   margin-right: 4px;
 }
 .delete_btn {
@@ -45,10 +48,18 @@
   text-align: center;
 }
 
-.columnWrapper {
+.btnWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px 0;
+}
 
+.rowWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
   gap: 3px;
 }
 
@@ -60,5 +71,5 @@
 
 .checkbox {
   accent-color: var(--purple-700);
-  margin-bottom: 20px;
+  margin-right: 10px;
 }

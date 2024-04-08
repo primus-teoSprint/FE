@@ -2,9 +2,16 @@
 
 import Link from 'next/link'
 import Textarea from '../Textarea'
+import { ibulsinVariants } from '@/app/_constants/ibulsin'
+import {
+  outlineTextareaAtom,
+  whyTextareaAtom,
+} from '@/app/_store/ibulsin/textarea'
 import style from './index.module.css'
 
 function Step1() {
+  const { outline, why } = ibulsinVariants
+
   return (
     <div className={style.main_container}>
       <div className={style.step_info}>
@@ -22,14 +29,14 @@ function Step1() {
             생각한 아이디어를 자유롭게 작성해봐요! 이곳에서는 오로지
             아이디어에만 집중해요.
           </p>
-          <Textarea fieldKey={'outline'} />
+          <Textarea fieldKey={outline} atom={outlineTextareaAtom} />
         </div>
         <div className={style.input_container}>
           <h3 className={style.input_title}>생각하게 된 배경</h3>
           <p className={style.input_explain}>
             해당 아이디어를 어떻게 생각하게 되었나요?
           </p>
-          <Textarea fieldKey={'why'} />
+          <Textarea fieldKey={why} atom={whyTextareaAtom} />
         </div>
         <div className={style.direction_btns}>
           <Link
