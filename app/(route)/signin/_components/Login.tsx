@@ -40,10 +40,22 @@ function Login() {
 
   const handleLogin = () => {
     const KAKAO_CLIENT_ID = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID
-    const KAKAO_REDIRECT_URL = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URL
+
+    let KAKAO_REDIRECT_URL
+
+    if (process.env.NODE_ENV === 'development') {
+      KAKAO_REDIRECT_URL = process.env.NEXT_PUBLIC_KAKAO_DEVLOP_REDIRECT_URL
+    } else {
+      KAKAO_REDIRECT_URL = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URL
+    }
+
     const kakadoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URL}&response_type=code`
 
-    window.location.href = kakadoAuthUrl
+    try {
+      router.push(kakadoAuthUrl)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
