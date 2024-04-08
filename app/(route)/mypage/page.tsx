@@ -1,3 +1,5 @@
+'use client'
+
 import Nav from '@/app/_common/nav'
 import Title from '@/app/_common/text/title'
 import IdeaCard from './_components/ideaCard'
