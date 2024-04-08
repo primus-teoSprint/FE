@@ -6,8 +6,7 @@ function List() {
   return (
     <div>
       <Nav title="검증 툴 리스트" />
-      <ListCompo></ListCompo>
-      <span>데이터를 모두 불러왔습니다.</span>
+      <ListCompo />
     </div>
   )
 }

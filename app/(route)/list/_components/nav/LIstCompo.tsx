@@ -18,8 +18,18 @@ function ListCompo() {
     <div>
       <div className={S.wrapper}>
         {resData?.map((data: Tool, index) => {
-          return <ToolCard title="" subTitle="" description="" toolImg="" />
+          return (
+            <ToolCard
+              title={data?.title || ''}
+              subTitle={data?.subTitle || ''}
+              description={data?.description || ''}
+              toolImg={data?.toolImg || ''}
+              toolId={index}
+              company={data?.company}
+            />
+          )
         })}
+        <span>데이터를 모두 불러왔습니다.</span>
       </div>
     </div>
   )
