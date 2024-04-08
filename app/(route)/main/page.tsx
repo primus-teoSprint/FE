@@ -1,17 +1,17 @@
 'use client'
 
+import ToolCard from '@/app/_components/card/toolCard'
+import KeyWordTool from '@/app/_components/card/toolCard/keyWordToolCard'
+import { useQuery } from '@tanstack/react-query'
+import axios, { AxiosResponse } from 'axios'
 import Link from 'next/link'
+import 'swiper/css'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import Nav from '../../_common/nav/index'
 import Title from '../../_common/text/title'
 import Search from '../../_components/search'
+import { Root, Tool } from '../../_constants/toolcard'
 import S from './page.module.css'
-import { useQuery } from '@tanstack/react-query'
-import axios, { AxiosResponse } from 'axios'
-import { Tool, Root } from '../../_constants/toolcard'
-import ToolCard from '@/app/_components/card/toolCard'
-import KeyWordTool from '@/app/_components/card/toolCard/keyWordToolCard'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 
 //TODO: 주석처리 사항들에 데이터 가져오기
 function Main() {
