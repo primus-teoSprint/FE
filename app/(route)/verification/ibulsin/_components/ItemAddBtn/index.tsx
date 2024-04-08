@@ -11,8 +11,8 @@ function ItemAddBtn() {
     const newItem: ActiveInvestmentItemType = {
       id: new Date().toISOString(),
       name: '',
-      score: null,
-      people: null,
+      score: 0,
+      people: 0,
     }
     setInvestmentItem((prev) => [...prev, newItem])
   }
