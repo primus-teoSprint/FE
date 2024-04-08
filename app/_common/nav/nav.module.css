@@ -6,7 +6,13 @@
   width: 100%;
   padding: 18px 0px;
 }
-
+.btn {
+  background-color: rgb(106, 106, 255);
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 8px;
+  padding:4px 8px;
+}
 .userProfileWrapper {
   display: flex;
   justify-content: center;
