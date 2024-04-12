@@ -106,6 +106,8 @@
 
 해당 프로젝트의 [BE 레포](https://github.com/primus-teoSprint/BE)는 다음에서 보실 수 있습니다.
 
+<br />
+
 #### `🍀 팀원`
 
 |                         [FE 스리](https://github.com/hanseulhee)                          |                          [BE 최롱](https://github.com/Choirong)                           |                           [FE 피기](https://github.com/03hoho03)                           |                          [FE 환두](https://github.com/chaduhwan)                           |
