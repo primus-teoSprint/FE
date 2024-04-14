@@ -14,6 +14,14 @@
 
 <br />
 
+## 🚀 Development
+
+현재 해당 서비스는 [DISQUIET](https://disquiet.io/product/%ED%94%84%EB%A6%AC%EB%AC%B4%EC%8A%A4), [오픈 카톡방 (비번: ideaup)](https://open.kakao.com/o/gxhjBTlg), [구글 폼 설문](https://forms.gle/RV1ceiSce7TpWsax5)을 통해 **프리무스**를 발전시키고 있습니다.
+
+관심 있으신 분들은 🙌🏻함께 참여해 주세요!
+
+<br />
+
 ## 🪐 Main Service
 
 #### `아이디어 툴`
